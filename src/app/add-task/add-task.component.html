@@ -1,0 +1,54 @@
+<div class="panel-header">
+  <div class="header text-center">
+    <h2 class="title">Add Task</h2>
+    <p class="category">Add Task Of Your Employee</p>
+  </div>
+</div>
+<div class="main-content">
+  <br>
+  <br>
+  <mat-card class="account-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Add User</mat-card-title>
+      <mat-card-subtitle>Add User by default password is 12345</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content style="margin-left:5px;">
+      <mat-form-field class="inputFields">
+        <mat-select placeholder="Select User" name="User" [(ngModel)]="userTask">
+          <mat-option *ngFor="let user of users" [value]="user.UserId">
+            {{user.FirstName +" "+ user.FirstName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field><br>
+      <mat-form-field class="inputFields">
+        <mat-label>Task Name</mat-label>
+        <input matInput [(ngModel)]="taskName">
+      </mat-form-field> <br>
+
+      <mat-form-field class="inputFields">
+        <mat-label>Description</mat-label>
+        <input matInput [(ngModel)]="description">
+      </mat-form-field> <br>
+
+      <mat-form-field class="inputFields">
+        <mat-label>Choose a Start Date</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="endDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> <br>
+
+      <mat-form-field class="inputFields">
+        <mat-label>Choose a End Date</mat-label>
+        <input matInput [matDatepicker]="picker1" [(ngModel)]="startDate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+     
+    </mat-card-content>
+
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" (click)="createTask()">Create Task</button>
+    </div>
+  </mat-card>
+</div>

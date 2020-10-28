@@ -1,0 +1,36 @@
+<div class=space>
+  <br>
+  <div class="forLaptop">
+    <br><br><br><br>
+  </div>
+
+  <div class="box-form">
+    <div class="left">
+      <div class="overlay">
+        <div class="image"></div>​
+        <br><br>
+      </div>
+    </div>
+    <div class="right">
+      <h3 style="font-weight: bold;"> Get Started! </h3>
+      <div class="input">
+        <input type="text" #tbUsername placeholder="Enter Username" required>
+        <br>
+        <input type="password" #tbPassword placeholder="Enter Password" required
+          (keydown.enter)="getLogin(tbUsername.value, tbPassword.value)">
+        <br><br>
+        <input type="submit" class="submitClick" (click)="getLogin(tbUsername.value, tbPassword.value)" />
+        <br><br>
+        <span style="color: blue; text-align: center;
+        font-weight: bold;"><a class="forgetAnchor" routerLink="forget-password"> Forgot your Password ? </a></span>
+        <br><br>
+        <div class="forLaptop">
+          <br><br><br><br>
+        </div>
+        <span style="color: red; text-align: center; font-weight: bold;"> {{_error}}</span>
+      </div>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
